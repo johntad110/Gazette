@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'read_book.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,12 +33,27 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Map bookData = {
-    "History of Media In Ethiopia": "Unknown",
-    "Introduction to Communication": "Yeah, Mr.",
-    "Introduction to Journalism": "Uhuh",
-    "Introduction to Public Relations": "Wait a min",
-    "The Nature and Difination of Communication": "William who?",
-    "What is Journalism?": "Mr. Que"
+    "assets/pdf/history_of_media_in_ethiopia.pdf": [
+      "History of Media In Ethiopia",
+      "Unknown"
+    ],
+    "assets/pdf/introduction_to_communication.pdf": [
+      "Introduction to Communication",
+      "Yeah, Mr."
+    ],
+    "assets/pdf/introduction_to_journalim.pdf": [
+      "Introduction to Journalism",
+      "Uhuh"
+    ],
+    "assets/pdf/introcution_to_public_Relations.pdf": [
+      "Introduction to Public Relations",
+      "Wait a min"
+    ],
+    "assets/pdf/the_nature_and_defination_of_communication.pdf": [
+      "The Nature and Difination of Communication",
+      "William who?"
+    ],
+    "assets/pdf/what_is_journalism.pdf": ["What is Journalism?", "Mr. Que"]
   };
 
   @override
@@ -70,16 +86,22 @@ class _MyHomePageState extends State<MyHomePage> {
                           offset: Offset(0, 1))
                     ]),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                ReadBook(path: bookData.keys.toList()[index])));
+                  },
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          bookData.keys.toList()[index],
+                          bookData.values.toList()[index][0],
                           style: const TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
-                        Text(bookData.values.toList()[index],
+                        Text(bookData.values.toList()[index][1],
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w300,
