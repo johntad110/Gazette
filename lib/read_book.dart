@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pdf_viewer_plugin/pdf_viewer_plugin.dart';
+import 'package:native_pdf_view/native_pdf_view.dart';
 
 class ReadBook extends StatefulWidget {
   final String path;
@@ -13,16 +13,18 @@ class ReadBook extends StatefulWidget {
 class _ReadBookState extends State<ReadBook> {
   @override
   Widget build(BuildContext context) {
+    final pdfController =
+        PdfController(document: PdfDocument.openAsset(widget.path));
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.black,
         title: const Text(
-          "Doc",
+          "Doc . . . /",
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ),
-      body: PdfView(path: widget.path),
+      body: PdfView(controller: pdfController),
     );
   }
 }
