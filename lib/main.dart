@@ -35,25 +35,25 @@ class _MyHomePageState extends State<MyHomePage> {
   Map bookData = {
     "assets/pdf/history_of_media_in_ethiopia.pdf": [
       "History of Media In Ethiopia",
-      "Unknown"
+      ". . ."
     ],
     "assets/pdf/introduction_to_communication.pdf": [
       "Introduction to Communication",
-      "Yeah, Mr."
+      "Enatesh Muluken"
     ],
-    "assets/pdf/introduction_to_journalim.pdf": [
+    "assets/pdf/introduction_to_journalism.pdf": [
       "Introduction to Journalism",
-      "Uhuh"
+      "Engdawork Tadesse"
     ],
-    "assets/pdf/introcution_to_public_Relations.pdf": [
+    "assets/pdf/introduction_to_public_relations.pdf": [
       "Introduction to Public Relations",
-      "Wait a min"
+      "Ibrahim S."
     ],
     "assets/pdf/the_nature_and_defination_of_communication.pdf": [
       "The Nature and Difination of Communication",
-      "William who?"
+      ". . ."
     ],
-    "assets/pdf/what_is_journalism.pdf": ["What is Journalism?", "Mr. Que"]
+    "assets/pdf/what_is_journalism.pdf": ["What is Journalism?", ". . ."]
   };
 
   @override
